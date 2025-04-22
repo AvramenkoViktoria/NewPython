@@ -1,8 +1,10 @@
+import pandas as pd
+
 def input_from_console():
     """
     Функція для вводу тексту з консолі
     """
-    pass
+    return input("Введіть текст: ")
 
 
 def input_from_file_builtin(filepath):
@@ -10,12 +12,13 @@ def input_from_file_builtin(filepath):
     Функція для зчитування з файлу за допомогою вбудованих можливостей Python
     :param filepath: шлях до файлу
     """
-    pass
-
+    with open(filepath, 'r', encoding='utf-8') as file:
+        return file.read()
 
 def input_from_file_pandas(filepath):
     """
     Функція для зчитування з файлу за допомогою бібліотеки pandas
     :param filepath: шлях до файлу
     """
-    pass
+    return pd.read_csv(filepath)
+
